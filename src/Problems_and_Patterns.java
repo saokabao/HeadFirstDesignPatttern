@@ -1,3 +1,4 @@
+import Strategy.Ducks.Behavior.Fly.CantFly;
 import Strategy.Ducks.Behavior.Fly.FlyWithRocket;
 import Strategy.Ducks.Behavior.Quack.MuteQuack;
 import Strategy.Ducks.Duck;
@@ -7,7 +8,7 @@ import Strategy.FileEncryption.Driver;
 public class Problems_and_Patterns {
 
     public static void testDucks(){
-        Duck duck  = new MallardDuck();
+        Duck duck  = new MallardDuck(new CantFly(), new MuteQuack());
         duck.performFly();
         duck.performQuack();
         duck.swim();
@@ -27,8 +28,8 @@ public class Problems_and_Patterns {
 
     public static void main(String[] args){
 
-        //testDucks();
-        testFileEncryption();
+        testDucks();
+        //testFileEncryption();
 
     }
 }

@@ -1,12 +1,18 @@
 package Strategy.Ducks;
 
 import Strategy.Ducks.Behavior.Fly.FlyBehavior;
+import Strategy.Ducks.Behavior.Quack.Quack;
 import Strategy.Ducks.Behavior.Quack.QuackBehavior;
 
-public abstract class Duck { // why abstract, cause its not going to be concrete
+public abstract class Duck {
     FlyBehavior flyBehavior;
     QuackBehavior quackBehavior;
 
+   public Duck(FlyBehavior fb, QuackBehavior qb){
+        System.out.println("Creating new duck ...");
+        this.flyBehavior = fb;
+        this.quackBehavior = qb;
+    }
     public void performFly(){
         flyBehavior.fly();
     }
