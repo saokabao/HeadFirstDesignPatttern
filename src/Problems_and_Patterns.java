@@ -8,13 +8,13 @@ import Strategy.FileEncryption.Driver;
 public class Problems_and_Patterns {
 
     public static void testDucks(){
-        Duck duck  = new MallardDuck(new CantFly(), new MuteQuack());
+        Duck duck  = new MallardDuck(new CantFly(), new MuteQuack()); // setting behavior at compile-time
         duck.performFly();
         duck.performQuack();
         duck.swim();
 
         //getting mallard duck a rocket
-        duck.setFlyBehavior(new FlyWithRocket());
+        duck.setFlyBehavior(new FlyWithRocket());   // setting behavior at runtime.
         duck.performFly();
 
         duck.setQuackBehavior(new MuteQuack());
